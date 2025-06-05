@@ -9,24 +9,24 @@
             theme = "dark";
         }
     }
-    return theme;
+    return theme === "dark" ? "transparent_dark" : "light";
     }
 
     // load giscus script
     const script = document.createElement("script");
     script.src = "https://giscus.app/client.js";
-    script.setAttribute("data-repo", "NOS-AE/NOS-AE.github.io");
-    script.setAttribute("data-repo-id", "R_kgDOO2fydw");
-    script.setAttribute("data-category", "Announcements");
-    script.setAttribute("data-category-id", "DIC_kwDOO2fyd84CrEWk");
-    script.setAttribute("data-mapping", "pathname");
-    script.setAttribute("data-strict", "0");
-    script.setAttribute("data-reactions-enabled", "1");
-    script.setAttribute("data-emit-metadata", "0");
-    script.setAttribute("data-input-position", "top");
+    script.setAttribute("data-repo", "{{ .Site.Params.giscus.repo }}");
+    script.setAttribute("data-repo-id", "{{ .Site.Params.giscus.repoId }}");
+    script.setAttribute("data-category", "{{ .Site.Params.giscus.category }}");
+    script.setAttribute("data-category-id", "{{ .Site.Params.giscus.categoryId }}");
+    script.setAttribute("data-mapping", "{{ .Site.Params.giscus.mapping }}");
+    script.setAttribute("data-strict", "{{ .Site.Params.giscus.strict }}");
+    script.setAttribute("data-reactions-enabled", "{{ .Site.Params.giscus.reactionsEnabled }}");
+    script.setAttribute("data-emit-metadata", "{{ .Site.Params.giscus.emitMetadata }}");
+    script.setAttribute("data-input-position", "{{ .Site.Params.giscus.inputPosition }}");
     script.setAttribute("data-theme", getGiscusTheme());
-    script.setAttribute("data-lang", "zh-CN");
-    script.setAttribute("crossorigin", "anonymous");
+    script.setAttribute("data-lang", "{{ .Site.Params.giscus.lang }}");
+    script.setAttribute("crossorigin", "{{ .Site.Params.giscus.crossorigin }}");
     script.async = true;
     document.getElementById("post-single").appendChild(script);
 
@@ -44,20 +44,4 @@
         document.getElementById("theme-toggle-footer").onclick = toggleGiscusTheme;
     }
 </script>
-
-<!-- <script src="https://giscus.app/client.js"
-        data-repo="NOS-AE/NOS-AE.github.io"
-        data-repo-id="R_kgDOO2fydw"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOO2fyd84CrEWk"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-</script> -->
 {{- /* Comments area end */ -}}

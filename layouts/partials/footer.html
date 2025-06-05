@@ -134,7 +134,7 @@
 </script>
 {{- end }}
 
-{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (ne .Layout "about") (.Param "ShowCodeCopyButtons")) }}
+{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "categories") (ne .Layout "search") (ne .Layout "about") (.Param "ShowCodeCopyButtons")) }}
 <script>
     document.querySelectorAll('pre > code').forEach((codeblock) => {
         const container = codeblock.parentNode.parentNode;
