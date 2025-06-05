@@ -47,6 +47,17 @@ body.dark #moon {
 }
 
 body:not(.dark) #sun {
+    vertical-align: middle;
+    display: none;
+}
+
+/* Footer theme toggle icons */
+body.dark #moon-footer {
+    vertical-align: middle;
+    display: none;
+}
+
+body:not(.dark) #sun-footer {
     display: none;
 }
 
@@ -90,4 +101,15 @@ body:not(.dark) #sun {
 
 .logo-switches {
     flex-wrap: inherit;
+}
+
+/* Styling for the footer theme toggle button */
+#theme-toggle-footer {
+    display: inline-flex; /* Use inline-flex to keep it on the same line if other elements are next to it, or flex if it's a block */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    /* Assuming top-link already has position: fixed and right/bottom properties */
+    /* Adjust bottom to position it above the scroll-to-top button */
+    /* The exact value might need tweaking depending on the scroll-to-top button's size and margin */
+    bottom: 120px; /* Example: 20px + 40px + 10px margin */
 }

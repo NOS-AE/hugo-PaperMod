@@ -1,3 +1,63 @@
 {{- /* Comments area start */ -}}
 {{- /* to add comments read => https://gohugo.io/content-management/comments/ */ -}}
+
+<script>
+    function getGiscusTheme() {
+    const theme = localStorage.getItem("pref-theme");
+    if (theme == null) {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            theme = "dark";
+        }
+    }
+    return theme;
+    }
+
+    // load giscus script
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", "NOS-AE/NOS-AE.github.io");
+    script.setAttribute("data-repo-id", "R_kgDOO2fydw");
+    script.setAttribute("data-category", "Announcements");
+    script.setAttribute("data-category-id", "DIC_kwDOO2fyd84CrEWk");
+    script.setAttribute("data-mapping", "pathname");
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "top");
+    script.setAttribute("data-theme", getGiscusTheme());
+    script.setAttribute("data-lang", "zh-CN");
+    script.setAttribute("crossorigin", "anonymous");
+    script.async = true;
+    document.getElementById("post-single").appendChild(script);
+
+    window.onload = () => {
+        // observe theme toggle
+        const toggleGiscusTheme = () => {
+            const giscus = document.getElementsByClassName('giscus-frame')[0].contentWindow;
+            giscus.postMessage({ giscus: {
+                setConfig: {
+                    theme: getGiscusTheme()
+                }
+            }}, 'https://giscus.app');
+        }
+        document.getElementById("theme-toggle").onclick = toggleGiscusTheme;
+        document.getElementById("theme-toggle-footer").onclick = toggleGiscusTheme;
+    }
+</script>
+
+<!-- <script src="https://giscus.app/client.js"
+        data-repo="NOS-AE/NOS-AE.github.io"
+        data-repo-id="R_kgDOO2fydw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOO2fyd84CrEWk"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script> -->
 {{- /* Comments area end */ -}}

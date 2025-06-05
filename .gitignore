@@ -1,0 +1,16 @@
+# Hugo
+public/
+resources/
+.DS_Store
+
+# If you are using npm
+node_modules/
+
+# If you have example site content within the theme for testing
+exampleSite/public/
+exampleSite/resources/
+
+# Other common ignores
+*.log
+*.temp
+*.tmp

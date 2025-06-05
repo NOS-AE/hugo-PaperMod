@@ -2,19 +2,87 @@
     --gap: 24px;
     --content-gap: 20px;
     --nav-width: 1024px;
-    --main-width: 720px;
+    --main-width: 820px;
     --header-height: 60px;
     --footer-height: 60px;
-    --radius: 8px;
+    --radius: 4px;
     --theme: rgb(255, 255, 255);
     --entry: rgb(255, 255, 255);
     --primary: rgb(30, 30, 30);
     --secondary: rgb(108, 108, 108);
     --tertiary: rgb(214, 214, 214);
     --content: rgb(31, 31, 31);
-    --code-block-bg: rgb(28, 29, 33);
+    --code-block-bg: #fff;
     --code-bg: rgb(245, 245, 245);
     --border: rgb(238, 238, 238);
+    --highlight-border-color: #ddd;
+    --h2-border: #2f2f2f;
+    --bg-bg-color: #eff1f5; /* from syntax.css .bg background-color */
+    --chroma-bg-color: #eff1f5; /* from syntax.css .chroma background-color */
+    --chroma-hl-bg-color: #bcc0cc; /* from syntax.css .chroma .hl background-color */
+    --chroma-lnt-color: #8c8fa1; /* from syntax.css .chroma .lnt color */
+    --chroma-ln-color: #8c8fa1; /* from syntax.css .chroma .ln color */
+    --chroma-k-color: #708; /* from syntax.css .chroma .k color */
+    --chroma-kc-color: #219; /* from syntax.css .chroma .kc color */
+    --chroma-kd-color: #708; /* from syntax.css .chroma .kd color */
+    --chroma-kn-color: #179299; /* from syntax.css .chroma .kn color */
+    --chroma-kp-color: #708; /* from syntax.css .chroma .kp color */
+    --chroma-kr-color: #708; /* from syntax.css .chroma .kr color */
+    --chroma-kt-color: #085; /* from syntax.css .chroma .kt color */
+    --chroma-na-color: #1e66f5; /* from syntax.css .chroma .na color */
+    --chroma-nc-color: #00f; /* from syntax.css .chroma .nc color */
+    --chroma-no-color: #00f; /* from syntax.css .chroma .no color */
+    --chroma-nd-color: #1e66f5; /* from syntax.css .chroma .nd color */
+    --chroma-ne-color: #fe640b; /* from syntax.css .chroma .ne color */
+    --chroma-nn-color: #fe640b; /* from syntax.css .chroma .nn color */
+    --chroma-nt-color: #219; /* from syntax.css .chroma .nt color */
+    --chroma-nb-color: #219; /* from syntax.css .chroma .nb color */
+    --chroma-bp-color: #219; /* from syntax.css .chroma .bp color */
+    --chroma-nv-color: #dc8a78; /* from syntax.css .chroma .nv color */
+    --chroma-vc-color: #dc8a78; /* from syntax.css .chroma .vc color */
+    --chroma-vg-color: #dc8a78; /* from syntax.css .chroma .vg color */
+    --chroma-vi-color: #dc8a78; /* from syntax.css .chroma .vi color */
+    --chroma-vm-color: #dc8a78; /* from syntax.css .chroma .vm color */
+    --chroma-nf-color: #00f; /* from syntax.css .chroma .nf color */
+    --chroma-fm-color: #00f; /* from syntax.css .chroma .fm color */
+    --chroma-s-color: #40a02b; /* from syntax.css .chroma .s color */
+    --chroma-sa-color: #d20f39; /* from syntax.css .chroma .sa color */
+    --chroma-sb-color: #40a02b; /* from syntax.css .chroma .sb color */
+    --chroma-sc-color: #40a02b; /* from syntax.css .chroma .sc color */
+    --chroma-dl-color: #1e66f5; /* from syntax.css .chroma .dl color */
+    --chroma-sd-color: #9ca0b0; /* from syntax.css .chroma .sd color */
+    --chroma-s2-color: #40a02b; /* from syntax.css .chroma .s2 color */
+    --chroma-se-color: #1e66f5; /* from syntax.css .chroma .se color */
+    --chroma-sh-color: #9ca0b0; /* from syntax.css .chroma .sh color */
+    --chroma-si-color: #40a02b; /* from syntax.css .chroma .si color */
+    --chroma-sx-color: #40a02b; /* from syntax.css .chroma .sx color */
+    --chroma-sr-color: #179299; /* from syntax.css .chroma .sr color */
+    --chroma-s1-color: #40a02b; /* from syntax.css .chroma .s1 color */
+    --chroma-ss-color: #40a02b; /* from syntax.css .chroma .ss color */
+    --chroma-m-color: #fe640b; /* from syntax.css .chroma .m color */
+    --chroma-mb-color: #fe640b; /* from syntax.css .chroma .mb color */
+    --chroma-mf-color: #164; /* from syntax.css .chroma .mf color */
+    --chroma-mh-color: #fe640b; /* from syntax.css .chroma .mh color */
+    --chroma-mi-color: #164; /* from syntax.css .chroma .mi color */
+    --chroma-il-color: #fe640b; /* from syntax.css .chroma .il color */
+    --chroma-mo-color: #fe640b; /* from syntax.css .chroma .mo color */
+    --chroma-ow-color: #708; /* from syntax.css .chroma .ow color */
+    --chroma-c-color: #a50; /* from syntax.css .chroma .c color */
+    --chroma-ch-color: #a50; /* from syntax.css .chroma .ch color */
+    --chroma-cm-color: #a50; /* from syntax.css .chroma .cm color */
+    --chroma-c1-color: #a50; /* from syntax.css .chroma .c1 color */
+    --chroma-cs-color: #a50; /* from syntax.css .chroma .cs color */
+    --chroma-cp-color: #a50; /* from syntax.css .chroma .cp color */
+    --chroma-cpf-color: #a50; /* from syntax.css .chroma .cpf color */
+    --chroma-gd-color: #d20f39; /* from syntax.css .chroma .gd color */
+    --chroma-gr-color: #d20f39; /* from syntax.css .chroma .gr color */
+    --chroma-gh-color: #fe640b; /* from syntax.css .chroma .gh color */
+    --chroma-gi-color: #40a02b; /* from syntax.css .chroma .gi color */
+    --chroma-go-color: #888; /* Kept original: syntax.css .go has no color */
+    --chroma-gp-color: #555; /* Kept original: syntax.css .gp has no color */
+    --chroma-gu-color: #fe640b; /* from syntax.css .chroma .gu color */
+    --chroma-gt-color: #d20f39; /* from syntax.css .chroma .gt color */
+    --chroma-w-color: #bbb; /* Kept original: syntax.css .w has no color */
 }
 
 .dark {
@@ -24,9 +92,77 @@
     --secondary: rgb(155, 156, 157);
     --tertiary: rgb(65, 66, 68);
     --content: rgb(196, 196, 197);
-    --code-block-bg: rgb(46, 46, 51);
+    --code-block-bg: rgb(38, 38, 38);
     --code-bg: rgb(55, 56, 62);
     --border: rgb(51, 51, 51);
+    --highlight-border-color: #444;
+    --h2-border: #b6b6b6;
+    --bg-bg-color: #eff1f5; /* from syntax.css .bg background-color */
+    --chroma-bg-color: #eff1f5; /* from syntax.css .chroma background-color */
+    --chroma-hl-bg-color: #bcc0cc; /* from syntax.css .chroma .hl background-color */
+    --chroma-lnt-color: #8c8fa1; /* from syntax.css .chroma .lnt color */
+    --chroma-ln-color: #8c8fa1; /* from syntax.css .chroma .ln color */
+    --chroma-k-color: #d28445; /* from syntax.css .chroma .k color */
+    --chroma-kc-color: #d28445; /* from syntax.css .chroma .kc color */
+    --chroma-kd-color: #d28445; /* from syntax.css .chroma .kd color */
+    --chroma-kn-color: #179299; /* from syntax.css .chroma .kn color */
+    --chroma-kp-color: #d28445; /* from syntax.css .chroma .kp color */
+    --chroma-kr-color: #d28445; /* from syntax.css .chroma .kr color */
+    --chroma-kt-color: #d28445; /* from syntax.css .chroma .kt color */
+    --chroma-na-color: #1e66f5; /* from syntax.css .chroma .na color */
+    --chroma-nc-color: #7878fb; /* from syntax.css .chroma .nc color */
+    --chroma-no-color: #7878fb; /* from syntax.css .chroma .no color */
+    --chroma-nd-color: #1e66f5; /* from syntax.css .chroma .nd color */
+    --chroma-ne-color: #fe640b; /* from syntax.css .chroma .ne color */
+    --chroma-nn-color: #fe640b; /* from syntax.css .chroma .nn color */
+    --chroma-nt-color: #d28445; /* from syntax.css .chroma .nt color */
+    --chroma-nb-color: #d28445; /* from syntax.css .chroma .nb color */
+    --chroma-bp-color: #d28445; /* from syntax.css .chroma .bp color */
+    --chroma-nv-color: #dc8a78; /* from syntax.css .chroma .nv color */
+    --chroma-vc-color: #dc8a78; /* from syntax.css .chroma .vc color */
+    --chroma-vg-color: #dc8a78; /* from syntax.css .chroma .vg color */
+    --chroma-vi-color: #dc8a78; /* from syntax.css .chroma .vi color */
+    --chroma-vm-color: #dc8a78; /* from syntax.css .chroma .vm color */
+    --chroma-nf-color: #7878fb; /* from syntax.css .chroma .nf color */
+    --chroma-fm-color: #7878fb; /* from syntax.css .chroma .fm color */
+    --chroma-s-color: #40a02b; /* from syntax.css .chroma .s color */
+    --chroma-sa-color: #d20f39; /* from syntax.css .chroma .sa color */
+    --chroma-sb-color: #40a02b; /* from syntax.css .chroma .sb color */
+    --chroma-sc-color: #40a02b; /* from syntax.css .chroma .sc color */
+    --chroma-dl-color: #1e66f5; /* from syntax.css .chroma .dl color */
+    --chroma-sd-color: #9ca0b0; /* from syntax.css .chroma .sd color */
+    --chroma-s2-color: #40a02b; /* from syntax.css .chroma .s2 color */
+    --chroma-se-color: #1e66f5; /* from syntax.css .chroma .se color */
+    --chroma-sh-color: #9ca0b0; /* from syntax.css .chroma .sh color */
+    --chroma-si-color: #40a02b; /* from syntax.css .chroma .si color */
+    --chroma-sx-color: #40a02b; /* from syntax.css .chroma .sx color */
+    --chroma-sr-color: #179299; /* from syntax.css .chroma .sr color */
+    --chroma-s1-color: #40a02b; /* from syntax.css .chroma .s1 color */
+    --chroma-ss-color: #40a02b; /* from syntax.css .chroma .ss color */
+    --chroma-m-color: #fe640b; /* from syntax.css .chroma .m color */
+    --chroma-mb-color: #fe640b; /* from syntax.css .chroma .mb color */
+    --chroma-mf-color: rgb(23, 140, 93); /* from syntax.css .chroma .mf color */
+    --chroma-mh-color: #fe640b; /* from syntax.css .chroma .mh color */
+    --chroma-mi-color: rgb(23, 140, 93); /* from syntax.css .chroma .mi color */
+    --chroma-il-color: #fe640b; /* from syntax.css .chroma .il color */
+    --chroma-mo-color: #fe640b; /* from syntax.css .chroma .mo color */
+    --chroma-ow-color: #d28445; /* from syntax.css .chroma .ow color */
+    --chroma-c-color: rgb(38, 162, 0); /* from syntax.css .chroma .c color */
+    --chroma-ch-color: rgb(38, 162, 0); /* from syntax.css .chroma .ch color */
+    --chroma-cm-color: rgb(38, 162, 0); /* from syntax.css .chroma .cm color */
+    --chroma-c1-color: rgb(38, 162, 0); /* from syntax.css .chroma .c1 color */
+    --chroma-cs-color: rgb(38, 162, 0); /* from syntax.css .chroma .cs color */
+    --chroma-cp-color: rgb(38, 162, 0); /* from syntax.css .chroma .cp color */
+    --chroma-cpf-color: #a50; /* from syntax.css .chroma .cpf color */
+    --chroma-gd-color: #d20f39; /* from syntax.css .chroma .gd color */
+    --chroma-gr-color: #d20f39; /* from syntax.css .chroma .gr color */
+    --chroma-gh-color: #fe640b; /* from syntax.css .chroma .gh color */
+    --chroma-gi-color: #40a02b; /* from syntax.css .chroma .gi color */
+    --chroma-go-color: #888; /* Kept original: syntax.css .go has no color */
+    --chroma-gp-color: #555; /* Kept original: syntax.css .gp has no color */
+    --chroma-gu-color: #fe640b; /* from syntax.css .chroma .gu color */
+    --chroma-gt-color: #d20f39; /* from syntax.css .chroma .gt color */
+    --chroma-w-color: #bbb; /* Kept original: syntax.css .w has no color */
 }
 
 .list {

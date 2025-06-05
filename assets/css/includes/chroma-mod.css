@@ -1,5 +1,6 @@
 .chroma {
     background-color: unset !important;
+    padding: 0 4px;
 }
 
 .chroma .hl {

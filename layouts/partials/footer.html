@@ -23,11 +23,34 @@
 {{- end }}
 
 {{- if (not site.Params.disableScrollToTop) }}
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+<button aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</button>
+{{- end }}
+
+{{- if (not site.Params.disableThemeToggle) }}
+<button id="theme-toggle-footer" class="top-link" aria-label="Toggle theme">
+    <svg id="moon-footer" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+    <svg id="sun-footer" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+</button>
 {{- end }}
 
 {{- partial "extend_footer.html" . }}
@@ -65,22 +88,31 @@
 {{- if (not site.Params.disableScrollToTop) }}
 <script>
     var mybutton = document.getElementById("top-link");
+    var mybuttonFooter = document.getElementById("theme-toggle-footer");
     window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
             mybutton.style.visibility = "visible";
             mybutton.style.opacity = "1";
+            mybuttonFooter.style.visibility = "visible";
+            mybuttonFooter.style.opacity = "1";
         } else {
             mybutton.style.visibility = "hidden";
             mybutton.style.opacity = "0";
+            mybuttonFooter.style.visibility = "hidden";
+            mybuttonFooter.style.opacity = "0";
         }
     };
 
+    mybutton.onclick = function () {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    };
 </script>
 {{- end }}
 
 {{- if (not site.Params.disableThemeToggle) }}
 <script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
+    function toggleTheme() {
         if (document.body.className.includes("dark")) {
             document.body.classList.remove('dark');
             localStorage.setItem("pref-theme", 'light');
@@ -88,12 +120,21 @@
             document.body.classList.add('dark');
             localStorage.setItem("pref-theme", 'dark');
         }
-    })
+    }
 
+    const headerThemeToggle = document.getElementById("theme-toggle");
+    if (headerThemeToggle) {
+        headerThemeToggle.addEventListener("click", toggleTheme);
+    }
+
+    const footerThemeToggle = document.getElementById("theme-toggle-footer");
+    if (footerThemeToggle) {
+        footerThemeToggle.addEventListener("click", toggleTheme);
+    }
 </script>
 {{- end }}
 
-{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (.Param "ShowCodeCopyButtons")) }}
+{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (ne .Layout "about") (.Param "ShowCodeCopyButtons")) }}
 <script>
     document.querySelectorAll('pre > code').forEach((codeblock) => {
         const container = codeblock.parentNode.parentNode;

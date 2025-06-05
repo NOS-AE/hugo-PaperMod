@@ -1,6 +1,10 @@
 /* from reset */
 ::-webkit-scrollbar-track {
-    background: 0 0;
+    background-color: var(--theme);
+}
+
+:not(.dark)::-webkit-scrollbar-track {
+    background-color: var(--code-block-bg);
 }
 
 .list:not(.dark)::-webkit-scrollbar-track {
@@ -30,13 +34,22 @@
     display: none;
 }
 
+.dark .post-content :not(table) ::-webkit-scrollbar-thumb {
+    border: 2px solid var(--code-block-bg);
+    background: rgb(125, 125, 125);
+}
+
+.dark .post-content :not(table) ::-webkit-scrollbar-thumb:hover {
+    background: rgb(107, 107, 107);
+}
+
 .post-content :not(table) ::-webkit-scrollbar-thumb {
     border: 2px solid var(--code-block-bg);
-    background: rgb(113, 113, 117);
+    background: rgb(185, 185, 185);
 }
 
 .post-content :not(table) ::-webkit-scrollbar-thumb:hover {
-    background: rgb(163, 163, 165);
+    background: rgb(210, 210, 210);
 }
 
 .gist table::-webkit-scrollbar-thumb {
