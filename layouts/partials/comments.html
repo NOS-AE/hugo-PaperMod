@@ -3,7 +3,7 @@
 
 <script>
     function getGiscusTheme() {
-    const theme = localStorage.getItem("pref-theme");
+    let theme = localStorage.getItem("pref-theme");
     if (theme == null) {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             theme = "dark";
