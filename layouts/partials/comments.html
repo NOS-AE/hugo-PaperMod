@@ -3,13 +3,8 @@
 
 <script>
     function getGiscusTheme() {
-    let theme = localStorage.getItem("pref-theme");
-    if (theme == null) {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            theme = "dark";
-        }
-    }
-    return theme === "dark" ? "transparent_dark" : "light";
+        let theme = localStorage.getItem("pref-theme");
+        return theme === "dark" ? "transparent_dark" : "light";
     }
 
     // load giscus script
