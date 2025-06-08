@@ -35,6 +35,9 @@
 {{- if site.Params.analytics.naver.SiteVerificationTag }}
 <meta name="naver-site-verification" content="{{ site.Params.analytics.naver.SiteVerificationTag }}">
 {{- end }}
+{{- if site.Params.analytics.umami.id }}
+<script defer data-website-id="{{ site.Params.analytics.umami.id }}" src="{{ site.Params.analytics.umami.domain }}/script.js"></script>
+{{- end }}
 
 {{- /* Styles */}}
 
