@@ -38,6 +38,9 @@
 {{- if site.Params.analytics.umami.id }}
 <script defer data-website-id="{{ site.Params.analytics.umami.id }}" src="{{ site.Params.analytics.umami.domain }}/script.js"></script>
 {{- end }}
+{{- if site.Params.analytics.goatcounter.enable | and hugo.IsProduction }}
+{{- partial "goatcounter.html" . -}}
+{{- end }}
 
 {{- /* Styles */}}
 
