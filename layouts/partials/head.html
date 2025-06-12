@@ -35,7 +35,7 @@
 {{- if site.Params.analytics.naver.SiteVerificationTag }}
 <meta name="naver-site-verification" content="{{ site.Params.analytics.naver.SiteVerificationTag }}">
 {{- end }}
-{{- if site.Params.analytics.umami.id }}
+{{- if site.Params.analytics.umami.id | and hugo.IsProduction }}
 <script defer data-website-id="{{ site.Params.analytics.umami.id }}" src="{{ site.Params.analytics.umami.domain }}/script.js"></script>
 {{- end }}
 {{- if site.Params.analytics.goatcounter.enable | and hugo.IsProduction }}

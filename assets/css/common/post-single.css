@@ -92,9 +92,14 @@
 
 .post-content a,
 .toc a:hover {
-    box-shadow: 0 1px 0;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
+    color: #2484c1;
+    text-decoration: none;
+}
+
+.post-content a:hover {
+    box-shadow: 0 1px 0;
 }
 
 .post-content h1 a,
