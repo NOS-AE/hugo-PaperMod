@@ -98,6 +98,17 @@
     text-decoration: none;
 }
 
+.repost-badge-big {
+    font-size: 16px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+    font-weight: 500;
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
 .post-content a:hover {
     box-shadow: 0 1px 0;
 }
@@ -355,6 +366,18 @@
     color: var(--secondary);
     font-size: 14px;
     font-weight: normal;
+}
+
+.repost-box {
+    margin: 0 2px 40px 2px;
+    border: 1px solid var(--border);
+    background: var(--code-bg);
+    border-radius: var(--radius);
+    padding: 0.4em;
+}
+
+.dark .repost-box {
+    background: var(--entry);
 }
 
 .toc {

@@ -5,6 +5,9 @@
     {{ partial "breadcrumbs.html" . }}
     <h1 class="post-title entry-hint-parent">
       {{ .Title }}
+      {{- if .Params.repost }}
+      <a class="repost-badge-big" href="{{ .Params.repost }}" target="_blank" title="点击跳转原文">转载</a>
+      {{- end }}
       {{- if .Draft }}
       <span class="entry-hint" title="Draft">
         <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
