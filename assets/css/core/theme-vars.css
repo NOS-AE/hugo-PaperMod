@@ -15,6 +15,7 @@
     --code-block-bg: #fff;
     --code-bg: rgb(245, 245, 245);
     --border: rgb(238, 238, 238);
+    --table-border: #ddd;
     --highlight-border-color: #ddd;
     --h2-border: #2f2f2f;
     --bg-bg-color: #eff1f5; /* from syntax.css .bg background-color */
@@ -95,6 +96,7 @@
     --code-block-bg: rgb(38, 38, 38);
     --code-bg: rgb(55, 56, 62);
     --border: rgb(48, 48, 48);
+    --table-border: #444;
     --highlight-border-color: #313131;
     --h2-border: #b6b6b6;
     --bg-bg-color: #eff1f5; /* from syntax.css .bg background-color */
