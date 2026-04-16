@@ -43,7 +43,7 @@
     border: 1px solid var(--border);
 }
 
-.post-entry:active {
+.post-entry:active:not(:has(.repost-badge:active)) {
     transform: scale(0.96);
 }
 
@@ -99,6 +99,16 @@
     font-weight: 500;
     margin-left: 8px;
     white-space: nowrap;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.repost-badge:hover {
+    background: var(--secondary);
+    color: var(--theme);
 }
 
 .entry-cover {

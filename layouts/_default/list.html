@@ -70,7 +70,7 @@
     <h2 class="entry-hint-parent">
       {{- .Title }}
       {{- if .Params.repost }}
-      <span class="repost-badge" title="转载">转载</span>
+      <a class="repost-badge" href="{{ .Params.repost }}" target="_blank" title="点击跳转原文" onclick="event.stopPropagation();" onmousedown="event.stopPropagation();">转载</a>
       {{- end }}
       {{- if .Draft }}
       <span class="entry-hint" title="Draft">
